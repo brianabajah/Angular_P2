@@ -2,12 +2,12 @@
 
 <h3>Please Log In</h3>
 
-<div><form method="POST">
+<div><form #loginf="ngForm" (ngSubmit)="submit(loginf)">
     <label class="login-e" for="username">Username</label>
-    <input class="login-e" type="text" placeholder="Username" name="username"/>
+    <input class="login-e" type="text" placeholder="Username" name="username" ngModel/>
     <br>
     <label class="login-e" for="password">Password</label>
-    <input class="login-e" type="password" placeholder="Password" name="password"/>
+    <input class="login-e" type="password" placeholder="Password" name="password" ngModel/>
     <br>
     <input class="login-e" type="submit" name="login" value="LOG IN"/>
 <h4>Don't have an account?</h4>
