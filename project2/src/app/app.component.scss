@@ -1,0 +1,40 @@
+
+$colr: rgba(125,125,125,0.5);
+
+#home{
+    background-color: $colr;
+    margin: 4px auto 4px 40%;
+    border: 1px outset gray;
+    border-radius: 25px;
+    &:hover {
+        background: darken($colr, 10%);
+        
+    &:active{
+        border: 1px inset gray;
+    }
+    }
+    height: 65px;
+    display: inline-block;    
+}
+
+
+#top{
+    background-color:rebeccapurple;
+}
+
+#left{
+    background-color:rgb(169, 255, 188);
+}
+
+
+#center{
+    margin-bottom: 0%;
+    padding: 10px;
+    height: 100%;
+}
+
+
+#right{
+    background-color: aqua;
+}
+

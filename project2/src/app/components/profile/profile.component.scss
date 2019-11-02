@@ -1,0 +1,20 @@
+$radii:360px;
+
+#ppic{
+    display: inline-block;
+    border: 2px groove gray;
+    height: 400px;
+    max-height: 10%;
+    width: 400px;
+    background-color: gray;
+    border-radius: $radii;
+    &:hover{
+        border-radius: 100px;
+     };
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../../assets/img/bugsb.jpg");
+}
+.profile{
+text-align: center;
+}

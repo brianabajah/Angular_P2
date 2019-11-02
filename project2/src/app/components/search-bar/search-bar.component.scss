@@ -1,0 +1,18 @@
+div.searchBox{
+    // border-bottom: 1px solid #4dd0e1;
+    // box-shadow: 0 1px 0 0 #4dd0e1;
+    margin: 0;
+    position: absolute;
+    top: 12%;
+    left: 90%;
+    margin-right: -10%;
+    transform: translate(-50%, -50%); 
+    background-color: black;
+}
+
+
+input.form-control{
+    height:33px;
+    font-size:13pt;
+    background-color: lightblue;
+}

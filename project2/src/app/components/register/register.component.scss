@@ -1,0 +1,26 @@
+.register-e{
+display:inline-block;
+margin: 5%;
+align-items: center;     
+}
+
+
+$reg : rgba(206, 206, 206, 0.8);
+
+
+#register{
+    
+    margin: auto;
+    padding:5%;
+    background-color: $reg ;
+    &:hover{
+       background-color: rgb(255, 255, 255);
+    };
+    h1{
+        text-align: center;
+    }
+
+}
+label{
+    width: 5em;
+}
