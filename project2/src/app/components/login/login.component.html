@@ -1,8 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body class="h3">
+    
+
 <h1>Welcome!</h1>
 
 <h3>Please Log In</h3>
 
-<div><form method="POST">
+<div class="blue-square-container"><form #spring = "ngForm" (ngSubmit) = "submission(spring)">
+
+
+<!-- ngSubmit is the name of the method created in typescript-->
     <label class="login-e" for="username">Username</label>
     <input class="login-e" type="text" placeholder="Username" name="username"/>
     <br>
@@ -12,3 +27,7 @@
     <input class="login-e" type="submit" name="login" value="LOG IN"/>
 <h4>Don't have an account?</h4>
 <a href='#' routerLink="/reg" ><button>Register</button></a>
+
+
+</body>
+</html>
