@@ -17,19 +17,20 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   submit(loginf:NgForm){
-    this.http.post("https://my-json-server.typicode.com/brianabajah/jtest/login"
+    this.http.post("https://bdf3d2a6-da4b-44a7-b837-434f6845961c.mock.pstmn.io/sam"
     ,{
-      // username : loginf.value.username,
-      // password:loginf.value.password
+      username:loginf.value.username,
+      password:loginf.value.password
     })
-    .toPromise().then((r:{ 
+    .toPromise().then(
+      (r:{ 
       username:string;
       email:string;
       profile:string;
       birthday:string})=>{
       localStorage.setItem("current",JSON.stringify(r));
       console.log(r)
-      this.navigateToLogin();
+      // this.navigateToLogin();
     })
     // this.navigateToLogin();
   }
