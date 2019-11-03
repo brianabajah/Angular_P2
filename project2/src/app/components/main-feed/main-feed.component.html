@@ -1,1 +1,11 @@
-<p>main-feed works!</p>
+<div class="divider"></div>
+<br>
+<em class="material-icons">face</em><h1 class="uname">Hello</h1>
+<ul  class="posts" *ngIf="posts">
+<li *ngFor ="let post of posts">
+<em class="material-icons">face</em><h1 (click)="navToProf(this.innerHTML)" class="uname">{{post.social_username}}</h1>
+    
+</li>
+</ul>
+<br>
+<div class="divider"></div>

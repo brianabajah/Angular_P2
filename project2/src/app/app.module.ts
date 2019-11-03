@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
+=======
+import { HttpClientModule } from '@angular/common/http';
+>>>>>>> dcbf10f77709152a875d8ec06b8e670a9b2cea2e
 import { AppRoutingModule, routnComps } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {ProfileComponent} from './components/profile/profile.component';
@@ -22,6 +26,7 @@ import {HttpClientModule} from '@angular/common/http';
     ProfileComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

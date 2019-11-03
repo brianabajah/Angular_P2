@@ -1,6 +1,7 @@
 <div class ="createPost">
-<form method="POST">
+<form #nPost=ngForm (ngSubmit)="newPost(nPost)">
     <label class="login-e" for="posting">What's going on?</label><br><br>
-    <input style = "height:200px; width: 600px;" class="login-e" type="text" placeholder="Share your thought" name="postingText"/>
+    <input style = "height:200px; width: 600px;" class="login-e" type="text" placeholder="Share your thought" name="postingText" ngModel/>
     <br><br>
-    <input class="login-e" type="submit" name="submitPost" value="MAKE POST"/>
+    <input type ="file" accept="image/*" (change)="onImgSelected($event)">
+    <input class="login-e" (click)="onSubmit()"type="submit" name="submitPost" value="MAKE POST"/>

@@ -3,7 +3,10 @@ import { HttpClient } from "@angular/common/http";
 import { NgForm } from "@angular/forms";
 import { format } from  "url";
 
+import {User} from "../models/user";
+import {Router} from '@angular/router';
 
+// import { from } from 'rxjs';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,38 +14,33 @@ import { format } from  "url";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , private router:Router) { }
 
-  ngOnInit()  {}
+  ngOnInit() {}
 
-
-  submission(form: NgForm){
-    this.http
-    .post("http://localhost:8080/Spring-MVC/auth.app", {
-    //////last section of this matches the name of the controller
-      name: form,
-      age: form.value.age
-      ///change this to username and password later
+  submit(loginf:NgForm){
+    this.http.post("https://bdf3d2a6-da4b-44a7-b837-434f6845961c.mock.pstmn.io/sam"
+    ,{
+      username:loginf.value.username,
+      password:loginf.value.password
     })
-    .toPromise()
-    .then((r: {name: string; age: number}) => localStorage.setItem("username", r.name)
-    );
+    .toPromise().then(
+      (r:{ 
+      username:string;
+      email:string;
+      profile:string;
+      birthday:string})=>{
+      localStorage.setItem("current",JSON.stringify(r));
+      console.log(r)
+      // this.navigateToLogin();
+    })
+    // this.navigateToLogin();
   }
 
-
-  authorize() {
-    this.http
-    .post("http://localhost:8080/Spring-MVC/authorize.app", {
-
-
-    name: localStorage.getItem("username"),
-    age: 0 
-    })
-
-    .toPromise()
-    .then(r => console.log(r));
-
-
-  }
+  navigateToLogin() {
+    if(localStorage.getItem("current").length>2){
+    this.router.navigateByUrl('/reg');
+    }
+ }
 
 }

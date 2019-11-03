@@ -1,7 +1,7 @@
 <div layout="max-width = 90%">
         
     <div id="top" flex="">
-            <a [routerLink]="reg">
+            <a (click)="swic()" routerLink="{{menubtn}}">
             <img src="../assets/img/kisspng-msn-computer-icons-portable-n.png" alt="logo" id="home">
             </a>
             <!-- This Area is only for the logo -->
@@ -16,8 +16,9 @@
 
     <div id="center" flex="70">
     <!-- Center Elements Go here -->
-    <router-outlet></router-outlet>  
+    <!-- <router-outlet></router-outlet>   -->
     <!-- <app-profile></app-profile> -->
+    <app-main-feed></app-main-feed>
 
     </div>
     <div  id="right" flex="" hide-sm="" hide-xs="" >
