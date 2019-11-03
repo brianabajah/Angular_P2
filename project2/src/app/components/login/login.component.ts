@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../models/user";
 import { HttpClient } from "@angular/common/http";
 import { NgForm } from "@angular/forms";
+import { format } from  "url";
+
+import {User} from "../models/user";
 import {Router} from '@angular/router';
 
 // import { from } from 'rxjs';
@@ -17,7 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   submit(loginf:NgForm){
-    this.http.post("https://bdf3d2a6-da4b-44a7-b837-434f6845961c.mock.pstmn.io/sam"
+    this.http.post("https://ebb8cab7-daa4-475c-917c-d5a38ae7e773.mock.pstmn.io/feed"
     ,{
       username:loginf.value.username,
       password:loginf.value.password

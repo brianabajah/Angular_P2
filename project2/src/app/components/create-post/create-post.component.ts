@@ -35,7 +35,7 @@ onImgSelected(event) {
 
 onSubmit() {
   const fd = new FormData();
-  fd.append = ('image',this.selectedImg, this.selectedImg.name);
+  // fd.append = ('image',this.selectedImg, this.selectedImg.name);
   this.http
   .post("Form Data Address", fd)
   .subscribe (res =>{

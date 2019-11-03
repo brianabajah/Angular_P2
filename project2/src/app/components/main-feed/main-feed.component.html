@@ -1,11 +1,39 @@
 <div class="divider"></div>
-<br>
-<em class="material-icons">face</em><h1 class="uname">Hello</h1>
+
+
 <ul  class="posts" *ngIf="posts">
 <li *ngFor ="let post of posts">
-<em class="material-icons">face</em><h1 (click)="navToProf(this.innerHTML)" class="uname">{{post.social_username}}</h1>
-    
+<br>
+<div class="divider">
+<em class="material-icons icons">face</em>
+<h2 (click)="navToProf($event)" class="uname more">{{post.social_username}}</h2>
+<br>
+<em class="material-icons icons">access_time</em>
+<h3 class="time">{{post.post_time}}</h3>
+<br>
+<div class="post">
+    {{post.post}}
+</div>
+<br>
+
+
+<em class="material-icons icons likes" (click)="like()">thumb_up</em><span>{{post.likes}}    </span>
+<em class="material-icons icons likes">thumb_down</em>  
+<br><br>
+<mat-expansion-panel>
+        <mat-expansion-panel-header>
+          This is the expansion title
+        </mat-expansion-panel-header>
+      
+        <p>This is the primary content of the panel.</p>
+      
+        <mat-action-row>
+          <button mat-button>Click me</button>
+        </mat-action-row>
+</mat-expansion-panel>
+<br><br>
+</div>
 </li>
 </ul>
 <br>
-<div class="divider"></div>
+<!-- <div class="divider"></div> -->
