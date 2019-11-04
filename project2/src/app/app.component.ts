@@ -18,8 +18,12 @@ export class AppComponent {
     if(this.router.url === '/' || this.router.url === '/reg' ){
       this.menubtn='/';
     }else{
-      this.menubtn='/smth';
+      this.menubtn='/main-feed';
     }
+  }
+  btnn(){
+    this.swic();
+    this.router.navigateByUrl(this.menubtn);
   }
 
 }

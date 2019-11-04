@@ -9,6 +9,9 @@ import { MainFeedComponent } from './components/main-feed/main-feed.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { GoHomeComponent } from './components/go-home/go-home.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 
 
 @NgModule({
@@ -24,8 +27,10 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
   imports: [
     HttpClientModule,
     BrowserModule,
+    MatExpansionModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

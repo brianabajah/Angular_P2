@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { NgForm } from "@angular/forms";
 import { format } from  "url";
-
 import {User} from "../models/user";
 import {Router} from '@angular/router';
+import { from } from 'rxjs';
 
 // import { from } from 'rxjs';
 @Component({
@@ -31,15 +31,15 @@ export class LoginComponent implements OnInit {
       profile:string;
       birthday:string})=>{
       localStorage.setItem("current",JSON.stringify(r));
-      console.log(r)
       // this.navigateToLogin();
     })
-    // this.navigateToLogin();
+    this.navigateToLogin();
   }
 
   navigateToLogin() {
-    if(localStorage.getItem("current").length>2){
-    this.router.navigateByUrl('/reg');
+    let words:string=localStorage.getItem("current");
+    if(words!=null && words.length>1 ){
+    this.router.navigateByUrl('/main-feed');
     }
  }
 
