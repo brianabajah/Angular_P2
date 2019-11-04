@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { NgForm } from "@angular/forms";
 import { format } from  "url";
-<<<<<<< HEAD
-=======
-
->>>>>>> d017746a8e0996f89da738695b3442ba69a3df04
 import {User} from "../models/user";
 import {Router} from '@angular/router';
 import { from } from 'rxjs';
