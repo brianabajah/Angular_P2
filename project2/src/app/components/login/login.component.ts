@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { NgForm } from "@angular/forms";
-import { format } from  "url";
-import {User} from "../models/user";
-import {Router} from '@angular/router';
-import { from } from 'rxjs';
+import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 // import { from } from 'rxjs';
 @Component({
@@ -14,33 +12,22 @@ import { from } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http: HttpClient , private router:Router) { }
+  constructor(private http: HttpClient, private router: Router, private lognServ: LoginService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  submit(loginf:NgForm){
-    this.http.post("https://ebb8cab7-daa4-475c-917c-d5a38ae7e773.mock.pstmn.io/feed"
-    ,{
-      username:loginf.value.username,
-      password:loginf.value.password
+  login(loginf: NgForm) {
+    this.lognServ.submit(loginf).toPromise().then((resps)=>{
+      console.log(JSON.stringify(resps));
     })
-    .toPromise().then(
-      (r:{ 
-      username:string;
-      email:string;
-      profile:string;
-      birthday:string})=>{
-      localStorage.setItem("current",JSON.stringify(r));
-      // this.navigateToLogin();
-    })
-    this.navigateToLogin();
-  }
+    }
+
 
   navigateToLogin() {
-    let words:string=localStorage.getItem("current");
-    if(words!=null && words.length>1 ){
-    this.router.navigateByUrl('/main-feed');
+    let words: string = localStorage.getItem("current");
+    if (words != null && words.length > 1) {
+      this.router.navigateByUrl('/main-feed');
     }
- }
+  }
 
 }
