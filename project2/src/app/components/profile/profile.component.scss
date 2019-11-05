@@ -1,20 +1,19 @@
-$radii:360px;
 
-#ppic{
-    display: inline-block;
-    border: 2px groove gray;
-    height: 400px;
-    max-height: 10%;
-    width: 400px;
-    background-color: gray;
-    border-radius: $radii;
-    &:hover{
-        border-radius: 100px;
-     };
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("../../../assets/img/bugsb.jpg");
-}
 .profile{
+padding: 10px;
+background-color: gray;
 text-align: center;
+width: 90%;
+margin: auto;
+border-radius: 20px;
+
+}
+#ppic{
+    border-radius: 360px;
+    &:hover{
+        border-radius: 20px;
+     };
+    border: 2px groove gray;
+    width: 50%;
+    alt: url("../../../assets/img/alt.png");
 }

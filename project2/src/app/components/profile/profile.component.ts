@@ -8,8 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   constructor() { }
-
+  profpic:string="";
+  description:string="";
   ngOnInit() {
+    this.prof();
   }
 
+  prof(){
+    this.profpic=localStorage.getItem("profpic");
+    this.description=localStorage.getItem("description");
+      if(this.profpic==null || this.profpic.length<1){
+      this.profpic="../../../assets/img/alt.png";
+      }
+      if(this.description==null || this.description.length<1){
+        this.description="Description"
+      }
+  }
+  
 }

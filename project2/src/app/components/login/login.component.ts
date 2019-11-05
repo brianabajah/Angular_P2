@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 import { NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
@@ -12,7 +11,7 @@ import { LoginService } from '../../services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router, private lognServ: LoginService) { }
+  constructor(private router: Router, private lognServ: LoginService) { }
 
   ngOnInit() { }
 
@@ -28,7 +27,7 @@ export class LoginComponent implements OnInit {
     let words: string = localStorage.getItem("current");
     console.log(words);
     if (words != null && words.length > 1) {
-      this.router.navigate([{outlets: {primary: 'main-feed' ,mleft: 'path'}}]);
+      this.router.navigate([{outlets: {primary: 'main-feed' ,mleft: 'profile'}}]);
     }
   }
 
