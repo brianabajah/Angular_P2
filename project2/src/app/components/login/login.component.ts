@@ -19,14 +19,16 @@ export class LoginComponent implements OnInit {
   login(loginf: NgForm) {
     this.lognServ.submit(loginf).toPromise().then((resps)=>{
       console.log(JSON.stringify(resps));
-    })
+      localStorage.setItem("current",JSON.stringify(resps));
+    });
+    this.navigateToLogin();
     }
-
 
   navigateToLogin() {
     let words: string = localStorage.getItem("current");
+    console.log(words);
     if (words != null && words.length > 1) {
-      this.router.navigateByUrl('/main-feed');
+      this.router.navigate([{outlets: {primary: 'main-feed' ,mleft: 'path'}}]);
     }
   }
 
