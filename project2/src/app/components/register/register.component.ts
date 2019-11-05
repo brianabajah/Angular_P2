@@ -15,11 +15,15 @@ export class RegisterComponent implements OnInit {
 
   registration(form: NgForm){
     this.http
-    .post("Json Address", {
-      userName: form.value.social_username,
-      email:  form.value.social_email,
-      password: form.value.social_password,
-      date: form.value.social_birthday
+    .post("http://localhost:8080/ProjectTwo/users/post.app", {
+        ///change this to match the project name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        username: form.value.username,
+        password: form.value.password,
+        email: form.value.email,
+        description: form.value.description,
+        profile: form.value.profile,
+        /////this is for the profile picture
+        birthday: form.value.birthday
     })
     .toPromise()
     .then((r:{userName:string;email:string;password:string;date:Date;}) => {
