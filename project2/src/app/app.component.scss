@@ -19,10 +19,17 @@ $colr: rgba(125,125,125,0.5);
 
 
 #top{
-    background-color:rebeccapurple;
+    // background-color:rebeccapurple;
+    background-color:rgba(169, 255, 188,0.2);
+    width: 100%;
+    // position: fixed;
+}
+#up{
+    position: fixed;
 }
 
 #left{
+    
     background-color:rgb(169, 255, 188);
 }
 

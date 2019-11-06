@@ -1,2 +1,35 @@
+<<<<<<< HEAD
 <app-search-bar></app-search-bar>
 <router-outlet  name="m-left"></router-outlet> 
+=======
+<div layout="max-width = 90%">
+    <div id="top" flex="">
+        
+            <img src="../../../assets/img/kisspng-msn-computer-icons-portable-n.png" alt="logo" (click)="btnn()" id="home">
+            
+            <!-- This Area is only for the logo -->
+    </div>
+</div>
+
+<div layout="row">
+    <div  id="left" flex="20">
+   <!-- left Element only -->
+   <router-outlet  name="mleft"></router-outlet>  
+    </div> 
+
+    <div id="center" flex="70">
+    <!-- Center Elements Go here -->
+    <!-- <router-outlet></router-outlet>   -->
+    <app-profile></app-profile>
+    <!-- <app-main-feed></app-main-feed> -->
+    <!-- <app-register></app-register> -->
+    </div>
+    <div  id="right" flex="" hide-sm="" hide-xs="" >
+      <!-- Right Elements Go here 
+            SearchBox Only
+            -->
+
+    </div>
+</div>
+  
+>>>>>>> master
