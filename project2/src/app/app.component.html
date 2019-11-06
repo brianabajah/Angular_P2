@@ -12,18 +12,19 @@
     <div  id="left" flex="20">
    <!-- left Element only -->
    <router-outlet  name="m-left"></router-outlet>  
+   <app-profile></app-profile>
     </div> 
 
     <div id="center" flex="70">
     <!-- Center Elements Go here -->
     <router-outlet></router-outlet>  
-    <!-- <app-profile></app-profile> -->
 
     </div>
     <div  id="right" flex="" hide-sm="" hide-xs="" >
       <!-- Right Elements Go here 
             SearchBox Only
             -->
+        <app-search-bar></app-search-bar>
     </div>
 </div>
   

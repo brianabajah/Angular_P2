@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm}  from "@angular/forms";
+import {NgForm}  from "@angular/forms";
 import { HttpClient} from "@angular/common/http";
 
 @Component({
@@ -27,19 +27,19 @@ export class CreatePostComponent implements OnInit {
   .catch(e => console.log(e));
 }
 
-selectedImg:File = null;
+// selectedImg:File = null;
 
-onImgSelected(event) {
-  this.selectedImg = <File> event.target.files[0];
-}
+// onImgSelected(event) {
+//   this.selectedImg = <File> event.target.files[0];
+// }
 
-onSubmit() {
-  const fd = new FormData();
-  fd.append = ('image',this.selectedImg, this.selectedImg.name);
-  this.http
-  .post("Form Data Address", fd)
-  .subscribe (res =>{
-    console.log(res);
-  });
-}
+// onSubmit() {
+//   const fd = new FormData();
+//   // fd.append = ('image',this.selectedImg, this.selectedImg.name);
+//   this.http
+//   .post("Form Data Address", fd)
+//   .subscribe (res =>{
+//     console.log(res);
+//   });
+// }
 }

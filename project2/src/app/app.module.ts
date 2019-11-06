@@ -10,6 +10,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { GoHomeComponent } from './components/go-home/go-home.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 
+import { UploadFileService } from './upload/upload-file.service';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    UploadFileService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

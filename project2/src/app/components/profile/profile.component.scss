@@ -3,9 +3,9 @@ $radii:360px;
 #ppic{
     display: inline-block;
     border: 2px groove gray;
-    height: 400px;
+    height: 200px;
     max-height: 10%;
-    width: 400px;
+    width: 200px;
     background-color: gray;
     border-radius: $radii;
     &:hover{
