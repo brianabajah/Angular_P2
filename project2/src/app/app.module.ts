@@ -11,7 +11,7 @@ import { GoHomeComponent } from './components/go-home/go-home.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
-import {RegisterComponent} from './components/register/register.component'
+import {RegisterComponent} from './components/register/register.component';
 
 
 

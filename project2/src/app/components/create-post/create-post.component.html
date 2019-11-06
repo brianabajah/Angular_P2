@@ -1,7 +1,45 @@
+<mat-accordion>
+        <form #nPost=ngForm (ngSubmit)="newPost(nPost)">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+            <em class="material-icons icons">picture_in_picture</em>
+            <em class="material-icons icons">folder_open</em>
+            </mat-panel-title>
+            <mat-panel-description>
+             Let The World See You Upload Pic?
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          
+          <input type ="file" accept="image/*" (change)="onImgSelected($event)">
+          
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+
+         <em class="material-icons icons">library_books </em>
+
+            </mat-panel-title>
+            <mat-panel-description>
+              {{panelOpenState ? 'Upload Pic Above' : 'Whats on Your Mind?'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>          
+          <input style = "height:200px; width: 600px;" class="login-e" type="text" placeholder="Share your thought" name="postingText" ngModel/>
+        <br><br>
+        </mat-expansion-panel>
+        <br><br>
+        <input class="login-e" (click)="onSubmit()"type="submit" name="submitPost" value="MAKE POST"/>
+        </form>
+    </mat-accordion>
+      
+
+
 <div class ="createPost">
-<form #nPost=ngForm (ngSubmit)="newPost(nPost)">
+<!-- <form #nPost=ngForm (ngSubmit)="newPost(nPost)">
     <label class="login-e" for="posting">What's going on?</label><br><br>
     <input style = "height:200px; width: 600px;" class="login-e" type="text" placeholder="Share your thought" name="postingText" ngModel/>
     <br><br>
     <input type ="file" accept="image/*" (change)="onImgSelected($event)">
-    <input class="login-e" (click)="onSubmit()"type="submit" name="submitPost" value="MAKE POST"/>
+    <input class="login-e" (click)="onSubmit()"type="submit" name="submitPost" value="MAKE POST"/> -->

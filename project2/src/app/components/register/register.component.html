@@ -1,19 +1,16 @@
 <div id="register">
-    <h1>Welcome To The Family</h1>
-<form #regi=ngForm (ngSubmit)="registration(regi)">
-<label class="register-e" for="userName">User Name</label>
-<input class="register-e" type="text" id="userName" placeholder="userName" name="social_username" ngModel>
-<br>
-<label class="register-e" for="email">Email</label>
-<input class="register-e" type="text" id="email" placeholder="Email" name="social_email" ngModel>
-<br>
-<label class="register-e" for="password">Password</label>
-<input class="register-e" id="password" type="password" placeholder="secret" name="social_password" ngModel>
-<br>
-<label class="register-e" for="date">Date of Birth</label>
-<input class="register-e" type="date" id="date" name="social_birthday" min="1818-01-01" ngModel>
-<br>
-<input class="register-e" type="submit" value="REGISTER">
-
-
-
+        <h1>Welcome To The Family</h1>
+    <form #regi=ngForm (ngSubmit)="registration(regi)">
+    <label class="register-e" for="email">Email</label>
+    <input class="register-e" type="text" id="email" placeholder="Email" name="email" ngModel>
+    <br>
+    <label class="register-e" for="userName">User Name</label>
+    <input class="register-e" type="text" id="username" placeholder="userName" name="username" ngModel>
+    <br>
+    <label class="register-e" for="password">Password</label>
+    <input class="register-e" id="password" type="password" placeholder="secret" name="password" ngModel>
+    <br>
+    <label class="register-e" for="date">Date of Birth</label>
+    <input class="register-e" type="date" id="birthday" name="brithday" min="1818-01-01" ngModel>
+    <br>
+    <input class="register-e" type="submit" value="REGISTER">
