@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   registration(form: NgForm){
     this.http
     .post("http://localhost:8080/ProjectTwo/users/post.app", {
-<<<<<<< HEAD
+
         ///change this to match the project name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         username: form.value.username,
         password: form.value.password,
@@ -26,17 +26,7 @@ export class RegisterComponent implements OnInit {
         /////this is for the profile picture
         brithday: form.value.brithday
     })
-=======
-      ///change this to match the project name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      username: form.value.username,
-      password: form.value.password,
-      email: form.value.email,
-      description: form.value.description,
-      profile: form.value.profile,
-      /////this is for the profile picture
-      brithday: form.value.brithday
-  })
->>>>>>> master
+
     .toPromise()
     .then((r:{userName:string;email:string;password:string;date:Date;}) => {
       console.log(r);

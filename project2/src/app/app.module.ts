@@ -11,14 +11,13 @@ import { GoHomeComponent } from './components/go-home/go-home.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
-<<<<<<< HEAD
+
 import {RegisterComponent} from './components/register/register.component'
 import { StorageServiceModule} from 'angular-webstorage-service';
-=======
-import {RegisterComponent} from './components/register/register.component';
 
 
->>>>>>> master
+
+
 
 
 @NgModule({
@@ -30,12 +29,10 @@ import {RegisterComponent} from './components/register/register.component';
     GoHomeComponent,
     CreatePostComponent,
     ProfileComponent,
-<<<<<<< HEAD
+
     RegisterComponent
     // StorageServiceModule
-=======
-    RegisterComponent,
->>>>>>> master
+
   ],
   imports: [
     HttpClientModule,
