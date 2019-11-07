@@ -6,10 +6,10 @@
 <br>
 <div class="divider">
 <em class="material-icons icons">face</em>
-<h2 (click)="navToProf($event)" class="uname more">{{post.social_username}}</h2>
+<h2 (click)="navToProf($event)" class="uname more">{{post.description}}</h2>
 <br>
 <em class="material-icons icons">access_time</em>
-<h3 class="time">{{post.post_time}}</h3>
+<h3 class="time">{{post.time}}</h3>
 <br>
 <div class="post" [routerLink]="['/main-feed']">
     {{post.post}}
@@ -18,7 +18,6 @@
 
 
 <em class="material-icons icons likes" (click)="like()">thumb_up</em><span>{{post.likes}}    </span>
-<em class="material-icons icons likes">thumb_down</em>  
 <br><br>
 <mat-expansion-panel>
         <mat-expansion-panel-header>

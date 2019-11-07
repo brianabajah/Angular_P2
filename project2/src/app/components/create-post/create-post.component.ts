@@ -40,14 +40,15 @@ export class CreatePostComponent implements OnInit {
  //uploading text post 
 
   newPost(form:NgForm) {
+    let user = JSON.parse(localStorage.getItem('current'));
     let today=new Date();
     let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     let outpt = new Date(date+" "+time);
     console.log(outpt);
     this.http.post("http://localhost:8080/ProjectTwo/users/userposts.app", {
-    post:  form.value.post,
-    time: outpt
+      description: user.username,
+      post: form.value.post
     
   })
   .toPromise()
