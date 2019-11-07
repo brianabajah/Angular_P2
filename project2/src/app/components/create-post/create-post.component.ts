@@ -20,7 +20,7 @@ export class CreatePostComponent implements OnInit {
   .toPromise()
   .then((r:{userName:string;email:string;password:string;date:Date;}) => {
     console.log(r);
-    sessionStorage.setItem("userName",JSON.stringify(r))
+    sessionStorage.setItem("post",JSON.stringify(r))
   })
   .catch(e => console.log(e));
 }
