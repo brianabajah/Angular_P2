@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from "@angular/common/http";
 import { NgForm } from '@angular/forms';
+import { UploadFileService } from '../../services/upload-file.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +10,10 @@ import { NgForm } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  selectedFiles: FileList;
+  currentFileUpload: File;
+
+  constructor(private http: HttpClient, private uploadService: UploadFileService) { }
   profpic:string="";
   description:string="";
   ngOnInit() {
@@ -47,4 +51,8 @@ export class ProfileComponent implements OnInit {
     .catch(e => console.log(e));
   }
   
+  selectFile(event) {
+    this.selectedFiles = event.target.files;
+  }
+
 }

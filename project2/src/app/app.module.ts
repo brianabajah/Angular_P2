@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {RegisterComponent} from './components/register/register.component';
 
+import { UploadFileService } from './services/upload-file.service';
+
+
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import {RegisterComponent} from './components/register/register.component';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    UploadFileService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

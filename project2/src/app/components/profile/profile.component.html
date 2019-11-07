@@ -1,4 +1,5 @@
 <div class="profile">
+        <!-- <input type="file" (change)="selectFile($event)"> -->
 <img id="ppic" src="{{profpic}}" alt="can you see me" >
 <div class="">
 <p>{{description}}</p>
@@ -10,6 +11,12 @@
                 <mat-expansion-panel-header>
         <em class="material-icons icons">person</em> Update Information
                 </mat-expansion-panel-header>
+
+                <!-- <img  src="{{profpic}}" style="width: 5%; height: 5%;" alt="can you see me" (change)="selectFile($event)" > -->
+                <label class="btn btn-default">
+                                <input type="file" (change)="selectFile($event)">
+                              </label>
+                <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button> <br><br>
                 <form #updt=ngForm (ngSubmit)="updat(updt)">
                         <label class="curents" for="email">Current Email:{{email}}</label><br>
                         <label class="register-e" for="email">Email</label>
