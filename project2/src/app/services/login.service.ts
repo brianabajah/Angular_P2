@@ -11,7 +11,7 @@ export class LoginService {
 
 
   submit(loginf:NgForm){
-   return this.http.post("https://ebb8cab7-daa4-475c-917c-d5a38ae7e773.mock.pstmn.io/feed"
+   return this.http.post("http://localhost:8080/ProjectTwo/auth/login.app"
     ,{
       username:loginf.value.username,
       password:loginf.value.password

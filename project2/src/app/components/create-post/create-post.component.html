@@ -10,8 +10,15 @@
              Let The World See You Upload Pic?
             </mat-panel-description>
           </mat-expansion-panel-header>
-          
-          <input type ="file" accept="image/*" (change)="onImgSelected($event)">
+          <div *ngIf="currentFileUpload" class="progress">
+            <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+              aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+              {{progress.percentage}}%</div>
+          </div>
+        <br><br>
+        <input type ="file" accept="image/*" (change)="selectFile($event)">
+        <br><br>
+        <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
           
         </mat-expansion-panel>
         <mat-expansion-panel (opened)="panelOpenState = true"
@@ -26,11 +33,12 @@
               {{panelOpenState ? 'Upload Pic Above' : 'Whats on Your Mind?'}}
             </mat-panel-description>
           </mat-expansion-panel-header>          
-          <input style = "height:200px; width: 600px;" class="login-e" type="text" placeholder="Share your thought" name="postingText" ngModel/>
+          <input style = "height:200px; width: 600px;"  type="text" placeholder="Share your thought" name="post" ngModel/>
         <br><br>
+        <input type="submit" name="post"  value="MAKE POST"/>
         </mat-expansion-panel>
         <br><br>
-        <input class="login-e" (click)="onSubmit()"type="submit" name="submitPost" value="MAKE POST"/>
+        
         </form>
     </mat-accordion>
       

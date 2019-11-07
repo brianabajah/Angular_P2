@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routnComps } from './app-routing.module';
+//components
 import { AppComponent } from './app.component';
 import {ProfileComponent} from './components/profile/profile.component';
 import { MainFeedComponent } from './components/main-feed/main-feed.component';
@@ -12,6 +13,8 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {RegisterComponent} from './components/register/register.component';
+//services
+import { UploadFileService } from './services/upload-file.service';
 
 
 
@@ -26,6 +29,7 @@ import {RegisterComponent} from './components/register/register.component';
     CreatePostComponent,
     ProfileComponent,
     RegisterComponent,
+    SearchBarComponent
   ],
   imports: [
     HttpClientModule,
@@ -34,8 +38,11 @@ import {RegisterComponent} from './components/register/register.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+
   ],
-  providers: [],
+  providers: [
+    UploadFileService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

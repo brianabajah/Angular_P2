@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 
 
+
 // import { from } from 'rxjs';
 @Component({
   selector: 'app-login',
@@ -17,6 +18,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() { }
 
   login(loginf: NgForm) {
+
+
     this.lognServ.submit(loginf).toPromise().then((resps)=>{
       console.log(JSON.stringify(resps));
       localStorage.setItem("current",JSON.stringify(resps));

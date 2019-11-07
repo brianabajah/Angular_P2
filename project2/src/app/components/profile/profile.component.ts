@@ -41,13 +41,12 @@ export class ProfileComponent implements OnInit {
 
   updat(form: NgForm){
     this.http
-    .post("http://localhost:8080/ProjectTwo/users/post.app", {
+    .post("http://localhost:8080/ProjectTwo/users/updateuser.app", {
       ///change this to match the project name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       username: form.value.username,
       password: form.value.password,
       email: form.value.email,
       profile: form.value.profile,
-      /////this is for the profile picture
       brithday: form.value.brithday
   })
     .toPromise()
