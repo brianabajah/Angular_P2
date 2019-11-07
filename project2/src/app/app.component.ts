@@ -15,15 +15,15 @@ export class AppComponent {
 
   swic():void{
     console.log(this.router.url);
-    if(this.router.url === '/' || this.router.url === '/reg' ){
+    if(this.router.url == '/' || this.router.url == '/reg' ){
       this.menubtn='/';
     }else{
-      this.menubtn='/main-feed';
+      this.menubtn='/main-feed(mleft:profile)';
     }
   }
   btnn(){
     this.swic();
-    this.router.navigateByUrl(this.menubtn);
+    this.router.navigate([{outlets: {primary: 'main-feed' ,mleft: 'profile'}}]);
   }
 
 }

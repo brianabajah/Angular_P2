@@ -15,6 +15,7 @@ import {RegisterComponent} from './components/register/register.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import {RegisterComponent} from './components/register/register.component';
     GoHomeComponent,
     CreatePostComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     HttpClientModule,
