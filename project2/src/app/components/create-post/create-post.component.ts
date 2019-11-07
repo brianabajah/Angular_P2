@@ -12,7 +12,8 @@ export class CreatePostComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() { }
-  newPost(form:NgForm) {this.http
+  newPost(form:NgForm) {
+    this.http
   .post("Json Address", {
     userName: form.value.social_username,
     email:  form.value.social_email,

@@ -1,10 +1,22 @@
-<div layout="max-width = 90%">
+<div id="up"  layout="max-width = 90%">
     <div id="top" flex="">
         
             <img src="../../../assets/img/kisspng-msn-computer-icons-portable-n.png" alt="logo" (click)="btnn()" id="home">
             
             <!-- This Area is only for the logo -->
+            <button  style="float: right; width: 10%; height: 50%; margin-top: 10px;" (click)="logout()" *ngIf=(!where())>LOGOUT</button>
     </div>
+    
+</div>
+<div layout="max-width = 90%">
+        <div id="top" flex="">
+            
+                <img src="../../../assets/img/kisspng-msn-computer-icons-portable-n.png" alt="logo" (click)="btnn()" id="home">
+                
+                <!-- This Area is only for the logo -->
+                <button  style="float: right; width: 10%; height: 50%; margin-top: 10px;" (click)="logout()" *ngIf=(!where())>LOGOUT</button>
+        </div>
+        
 </div>
 
 <div layout="row">

@@ -26,6 +26,13 @@ export class AppComponent {
     this.router.navigate([{outlets: {primary: 'main-feed' ,mleft: 'profile'}}]);
   }
 
+  logout(){
+    localStorage.clear();
+    console.log("logout");
+  }
+  where(){
+    return (this.router.url === '/' || this.router.url === '/reg');
+  }
 }
 
 
