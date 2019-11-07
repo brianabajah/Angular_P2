@@ -26,6 +26,7 @@ import {RegisterComponent} from './components/register/register.component';
     CreatePostComponent,
     ProfileComponent,
     RegisterComponent,
+    SearchBarComponent
   ],
   imports: [
     HttpClientModule,

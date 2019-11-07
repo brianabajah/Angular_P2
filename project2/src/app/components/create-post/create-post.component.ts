@@ -13,11 +13,9 @@ export class CreatePostComponent implements OnInit {
 
   ngOnInit() { }
   newPost(form:NgForm) {this.http
-  .post("Json Address", {
-    userName: form.value.social_username,
-    email:  form.value.social_email,
-    password: form.value.social_password,
-    date: form.value.social_birthday
+  .post("http://localhost:8080/ProjectTwo/users/userposts.app", {
+    description:  form.value.description,
+    
   })
   .toPromise()
   .then((r:{userName:string;email:string;password:string;date:Date;}) => {
