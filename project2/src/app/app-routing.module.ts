@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },  
   { path: 'reg', component: RegisterComponent },  
   { path: 'main-feed', component: MainFeedComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile/:name', component: ProfileComponent },
   { path: 'profile', component: ProfileComponent , outlet: "mleft"}
 ];
 

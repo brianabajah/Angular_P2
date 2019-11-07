@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Login</h1>
 <strong style= "color:red;">Please Login</strong>
 <hr>
@@ -16,3 +17,19 @@
     <p>Don't have an account? <a href="#" routerLink="/reg">Create An Account</a>.</p>
 </div>
 </div>
+=======
+<h1>Welcome!</h1>
+
+<h3>Please Log In</h3>
+
+<div><form #loginf="ngForm" (ngSubmit)="login(loginf)">
+    <label class="login-e" for="username">Username</label>
+    <input class="login-e" type="text" placeholder="Username" name="username" ngModel/>
+    <br>
+    <label class="login-e" for="password">Password</label>
+    <input class="login-e" type="password" placeholder="Password" name="password" ngModel/>
+    <br>
+    <input class="login-e" type="submit" name="login" value="LOG IN"/>
+<h4>Don't have an account?</h4>
+<a  routerLink="/reg" ><button>Register</button></a>
+>>>>>>> master
