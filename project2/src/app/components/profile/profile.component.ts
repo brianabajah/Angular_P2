@@ -72,7 +72,7 @@ export class ProfileComponent implements OnInit {
     return this.router.url != '/main-feed(mleft:profile)';
    }
    userProf(){
-     
+     console.log("Clicked");
      if(this.router.url ==='/main-feed(mleft:profile)'){
       let addrs= '/profile/'+localStorage.getItem("username");
       this.router.navigateByUrl(addrs);

@@ -1,4 +1,4 @@
-<div class="profile" (click)="userProf" >
+<div class="profile" (click)="userProf()" >
 <img id="ppic" src="{{profpic}}" alt="can you see me" >
 <div class="">
 <p>{{description}}</p>
@@ -35,4 +35,8 @@
                 
        
 
+</div>
+<br>
+<div *ngIf="onSide()">
+<app-create-post></app-create-post>
 </div>
