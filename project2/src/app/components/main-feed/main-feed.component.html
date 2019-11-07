@@ -25,10 +25,8 @@
           Comments
         </mat-expansion-panel-header>
       
-       <ul>
-         <li  class="comments" >loot through comments</li>
-         <li  class="comments">loot through comments</li>
-         <li  class="comments">loot through comments</li>
+       <ul *ngIf="post.comments">
+          <li *ngFor ="let comment of post.comments">
        </ul> 
        <br>     
        <textarea rows="4" style="width: 90%;resize: none;"></textarea>
