@@ -20,6 +20,7 @@ export class UploadFileService {
  
     return this.http.request(req);
   }
+
  
   getProfilePic(): Observable<any> {
     return this.http.get('http://localhost:8080/ProjectTwo/getProfilePic.app');

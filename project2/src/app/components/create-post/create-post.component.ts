@@ -34,21 +34,27 @@ export class CreatePostComponent implements OnInit {
   let file:object= file
 }*/
 
-makeid(length) {
-  let result = '';
-  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-     result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return (result+".jpg");
+// makeid(length) {
+//   let result = '';
+//   let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+//   let charactersLength = characters.length;
+//   for ( var i = 0; i < length; i++ ) {
+//      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+//   }
+//   return (result+".jpeg");
+// }
+
+selectFile(event) {
+  this.selectedFiles = event.target.files;
 }
+
 newPost(form: NgForm){
   this.http
   .post("http://localhost:8080/ProjectTwo/users/userPosts.app", {
     description: form.value.description,
-    file: form.value.file,
-    post: this.makeid(15)
+    userName: form.value.userName
+    posts_time:
+    // post: this.makeid(15)
 })
   .toPromise()
   .then((r:{description:string; post:string; file:File;}) => {
@@ -58,11 +64,11 @@ newPost(form: NgForm){
   .catch(e => console.log(e));
 }
 
-selectedImg:File = null;
+// selectedImg:File = null;
 
-onImgSelected(event) {
-  this.selectedImg = <File> event.target.files[0];
-}
+// onImgSelected(event) {
+//   this.selectedImg = <File> event.target.files[0];
+// }
 
 /* onSubmit() {
   const fd = new FormData();
@@ -74,8 +80,6 @@ onImgSelected(event) {
   });
 } */
 
-selectFile(event) {
-  this.selectedFiles = event.target.files;
-}
+
 
 }
