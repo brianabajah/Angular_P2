@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { AppComponent } from '../../app.component';
 import { Router } from '@angular/router';
+import { NgForm } from "@angular/forms";
 
 
 @Component({
@@ -35,6 +36,11 @@ export class MainFeedComponent implements OnInit {
     console.log(idAttr);
   }
 
+  comment(loginf: NgForm, ) {
+    this.http.commentServ(loginf).toPromise().then((resps)=>{
+      console.log(JSON.stringify(resps));
+    });
+    }
 
   //  getPosts(){
   //   this.http.get('https://bdf3d2a6-da4b-44a7-b837-434f6845961c.mock.pstmn.io/sam/post').subscribe(data => {

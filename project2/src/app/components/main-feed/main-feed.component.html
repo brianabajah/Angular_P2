@@ -28,12 +28,14 @@
        <ul *ngIf="post.comments">
           <li *ngFor ="let comment of post.comments">
        </ul> 
+       <form #comm="ngForm" (ngSubmit)="comments(comm)">
        <br>     
        <textarea rows="4" style="width: 90%;resize: none;"></textarea>
        <br>  
         <mat-action-row>            
-          <button mat-button style="margin-right:10%;">Comments</button>
+          <button mat-button style="margin-right:10%;" type="submit">Comment</button>
         </mat-action-row>
+       </form>
 </mat-expansion-panel>
 <br><br>
 </div>
