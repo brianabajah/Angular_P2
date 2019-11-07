@@ -24,6 +24,8 @@ export class MainFeedComponent implements OnInit {
     }
     );
   }
+
+  
   navToProf(social_username: Event) {
     // use this.router.navigate(['/your-path']) to go to profile window tolowercase
     let target = social_username.target || social_username.srcElement || social_username.currentTarget;

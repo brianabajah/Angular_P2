@@ -14,7 +14,7 @@ export class CreatePostComponent implements OnInit {
   ngOnInit() { }
   newPost(form:NgForm) {this.http
   .post("http://localhost:8080/ProjectTwo/users/userposts.app", {
-    description:  form.value.description,
+    post:  form.value.post,
     
   })
   .toPromise()

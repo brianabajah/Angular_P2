@@ -26,11 +26,11 @@
               {{panelOpenState ? 'Upload Pic Above' : 'Whats on Your Mind?'}}
             </mat-panel-description>
           </mat-expansion-panel-header>          
-          <input style = "height:200px; width: 600px;" class="login-e" type="text" placeholder="Share your thought" name="postingText" ngModel/>
+          <input style = "height:200px; width: 600px;"  type="text" placeholder="Share your thought" name="post" ngModel/>
         <br><br>
         </mat-expansion-panel>
         <br><br>
-        <input class="login-e" (click)="onSubmit()"type="submit" name="submitPost" value="MAKE POST"/>
+        <input  (click)="onSubmit()"type="submit" name="post" [routerLink]="['/main-feed']" value="MAKE POST"/>
         </form>
     </mat-accordion>
       

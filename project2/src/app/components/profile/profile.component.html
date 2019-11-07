@@ -1,4 +1,4 @@
-<div  class="profile">
+<div  class="profile" (click)="userProf()">
 <img  id="ppic" src="{{profpic}}" alt="can you see me" >
 <div class="">
 <p>{{description}}</p>
@@ -28,7 +28,7 @@
                         <input  type="date" id="birthday" name="brithday" min="1818-01-01" ngModel>
                    
                 <mat-action-row>            
-                  <button mat-button style="margin-right:10%;" type="submit" value="Update">UPDATE</button>
+                  <button mat-button style="margin-right:10%;" type="submit" value="Update"  routerLinkActive="router-link-active" >UPDATE</button>
                 </mat-action-row>
                 </form>
         </mat-expansion-panel>
