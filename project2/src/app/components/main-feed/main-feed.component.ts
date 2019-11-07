@@ -30,7 +30,7 @@ export class MainFeedComponent implements OnInit {
   }
 
 
-  // getPosts(){
+   // getPosts(){
   //   this.http.get('https://bdf3d2a6-da4b-44a7-b837-434f6845961c.mock.pstmn.io/sam/post').subscribe(data => {
   //     this.posts = data;})
   // }
