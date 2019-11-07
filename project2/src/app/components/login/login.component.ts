@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("current",JSON.stringify(resps));
       // AppComponent.saveInSession( loginf.value.username,
       //   loginf.value.password);
+     
     });
     this.navigateToLogin();
    
@@ -35,5 +36,8 @@ export class LoginComponent implements OnInit {
     if (words != null && words.length > 1) {
       this.router.navigate([{outlets: {primary: 'main-feed' ,mleft: 'profile'}}]);
     }
-  }
+  //   }else{
+  //   location.reload();
+  // } 
+  } 
 }
