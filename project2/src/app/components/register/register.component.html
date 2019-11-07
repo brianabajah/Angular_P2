@@ -1,19 +1,26 @@
 <div id="register">
-    <h1>Welcome To The Family</h1>
-<form #regi=ngForm (ngSubmit)="registration(regi)">
-<label class="register-e" for="userName">User Name</label>
-<input class="register-e" type="text" id="userName" placeholder="userName" name="social_username" ngModel>
-<br>
-<label class="register-e" for="email">Email</label>
-<input class="register-e" type="text" id="email" placeholder="Email" name="social_email" ngModel>
-<br>
-<label class="register-e" for="password">Password</label>
-<input class="register-e" id="password" type="password" placeholder="secret" name="social_password" ngModel>
-<br>
-<label class="register-e" for="date">Date of Birth</label>
-<input class="register-e" type="date" id="date" name="social_birthday" min="1818-01-01" ngModel>
-<br>
-<input class="register-e" type="submit" value="REGISTER">
+    <h1>Create An Account</h1>
+    <strong style="color:red;">Fill out this form to create an account</strong>
 
-
-
+    <form #regi=ngForm (ngSubmit)="registration(regi)">
+        <br>
+        <hr>
+        <br>
+        <div class="container" class="h1">
+            <label for="userName">Email</label>
+            <input type="text" id="email" placeholder="Email" name="email" ngModel>
+            <br>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="username" name="username" ngModel>
+            <br>
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="password" name="password" ngModel>
+            <br>
+            <label for="date">Date of Birth</label>
+            <input type="date" id="brithday" name="brithday" min="1818-01-01" ngModel>
+            <br>
+            <button class="registerbutton" type="submit" value="REGISTER"> Register </button>
+            <div class="littlebox">
+                <p>Don't have an account? <a href="#" routerLink="/reg">Create An Account</a>.</p>
+            </div>
+        </div>

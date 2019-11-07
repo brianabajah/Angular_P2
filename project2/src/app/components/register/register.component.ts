@@ -20,10 +20,9 @@ export class RegisterComponent implements OnInit {
         username: form.value.username,
         password: form.value.password,
         email: form.value.email,
-        description: form.value.description,
         profile: form.value.profile,
         /////this is for the profile picture
-        birthday: form.value.birthday
+        brithday: form.value.brithday
     })
     .toPromise()
     .then((r:{userName:string;email:string;password:string;date:Date;}) => {
