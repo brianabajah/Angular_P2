@@ -1,26 +1,49 @@
 .register-e{
-display:inline-block;
-margin: 5%;
-align-items: center;     
-}
-
-
-$reg : rgba(206, 206, 206, 0.8);
-
-
-#register{
-    
-    margin: auto;
-    padding:5%;
-    background-color: $reg ;
-    &:hover{
-       background-color: rgb(255, 255, 255);
-    };
-    h1{
-        text-align: center;
+    display:inline-block;
+    margin: 30%;
+    align-items: center;     
     }
-
-}
-label{
-    width: 5em;
-}
+    $reg : rgba(206, 206, 206, 0.8);
+    #register{
+        
+        margin: auto;
+        padding:5%;
+        background-color: white ;
+        &:hover{
+           background-color: #8c8c8c(255, 255, 255);
+        };
+        h1{
+            text-align: center;
+        }
+    }
+    label{
+        width: 5em;
+    }
+    .registerbutton{
+        background-color: #23527c ;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+      
+      input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+    
+    
+    
+    
+    

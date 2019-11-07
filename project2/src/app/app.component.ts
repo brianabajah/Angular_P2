@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
+import {SESSION_STORAGE, WebStorageService} from 'angular-webstorage-service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  
+ 
   constructor(private router: Router ) {
 
   }
@@ -25,6 +30,19 @@ export class AppComponent {
     this.swic();
     this.router.navigateByUrl(this.menubtn);
   }
+
+//   saveInSession(key, val): void {
+//     console.log('recieved= key:' + key + 'value:' + val);
+//     this.storage.set(key, val);
+//     this.data[key]= this.storage.get(key);
+//    }
+
+   
+// getFromSession(key): void {
+//     console.log('recieved= key:' + key);
+//     this.data[key]= this.storage.get(key);
+//     console.log(this.data);
+//    }
 
 }
 

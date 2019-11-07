@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { AppComponent } from 'src/app/app.component';
+
 
 // import { from } from 'rxjs';
 @Component({
@@ -19,8 +21,11 @@ export class LoginComponent implements OnInit {
     this.lognServ.submit(loginf).toPromise().then((resps)=>{
       console.log(JSON.stringify(resps));
       localStorage.setItem("current",JSON.stringify(resps));
+      // AppComponent.saveInSession( loginf.value.username,
+      //   loginf.value.password);
     });
     this.navigateToLogin();
+   
     }
 
   navigateToLogin() {
@@ -30,5 +35,4 @@ export class LoginComponent implements OnInit {
       this.router.navigate([{outlets: {primary: 'main-feed' ,mleft: 'profile'}}]);
     }
   }
-
 }
