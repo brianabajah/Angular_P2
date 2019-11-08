@@ -9,6 +9,7 @@ export class HttpService {
 
   constructor(private http:HttpClient) { }
 
+
   getPosts(){
     return this.http.get("http://localhost:8080/ProjectTwo/users/getAllPosts.app");
   }

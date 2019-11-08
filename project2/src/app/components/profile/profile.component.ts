@@ -12,19 +12,20 @@ export class ProfileComponent implements OnInit {
 
   constructor(private http: HttpClient, private router:Router) { }
 
-  user:any={"profpic":"adress",
-               "description":"description",
-              "email":"email",
-                "uname":"uname",
-                "bdate":"bdate" };
+  curr={ "username":JSON.parse(localStorage.getItem("current")).username,
+                "description":JSON.parse(localStorage.getItem("current")).description,
+                "email":JSON.parse(localStorage.getItem("current")).email,
+                "profile":JSON.parse(localStorage.getItem("current")).profile,
+                "birthday":JSON.parse(localStorage.getItem("current")).birthday };
   profpic:string;
-  description:string;
-  email:string;
-  uname:string;
-  bdate:any;
+  description:string=this.curr.description;
+  email:string=this.curr.email;
+  uname:string=this.curr.username;
+  bdate:any=this.curr.birthday;
+
+  user:any;
 
   ngOnInit() {
-
     this.prof();
   }
 
@@ -56,19 +57,27 @@ export class ProfileComponent implements OnInit {
     })
     .catch(e => console.log(e));
   }
+
+  
   populateUser(){
-  this.user= JSON.parse(localStorage.getItem(this.router.url));
-  if(this.user!=null){
-  this.profpic=this.user.profpic;
-  this.description=this.user.description;
-  this.email=this.user.email;
-  this.uname=this.user.uname;
-  this.bdate=this.user.bdate;
-  }
+  let name=(this.router.url).substring(9);
+  this.http.get("http://localhost:8080/ProjectTwo/users/getUser.app?username="+name).subscribe(data => {
+        this.user = data;});
+    console.log(this.user);
+  // this.user= JSON.parse(localStorage.getItem(this.router.url));
+  // if(this.user!=null){
+  // this.profpic=this.user.profpic;
+  // this.description=this.user.description;
+  // this.email=this.user.email;
+  // this.uname=this.user.uname;
+  // this.bdate=this.user.bdate;
+  // }
  
   }
   onSide():boolean{
-    return this.router.url != '/main-feed(mleft:profile)';
+    // console.log("My name is "+ this.router.url +" looking for"+("/profile/"+ this.curr.username));
+    return (this.router.url != '/main-feed(mleft:profile)' && this.router.url === "/profile/"+ this.curr.username );
+    
    }
    userProf(){
      console.log("Clicked");

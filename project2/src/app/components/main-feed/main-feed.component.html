@@ -9,7 +9,7 @@
 <h2 (click)="navToProf($event)" class="uname more">{{post.description}}</h2>
 <br>
 <em class="material-icons icons">access_time</em>
-<h3 class="time">{{post.time}}</h3>
+<h3 class="time">{{ getTime(post.time)}}</h3>
 <br>
 <div class="post" [routerLink]="['/main-feed']">
     {{post.post}}

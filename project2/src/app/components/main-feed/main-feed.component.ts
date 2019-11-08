@@ -3,6 +3,8 @@ import { HttpService } from '../../services/http.service';
 import { AppComponent } from '../../app.component';
 import { Router } from '@angular/router';
 import { NgForm } from "@angular/forms";
+import { Timestamp } from 'rxjs';
+import { Time, DatePipe, formatDate } from '@angular/common';
 
 
 @Component({
@@ -16,15 +18,24 @@ export class MainFeedComponent implements OnInit {
   constructor(private http: HttpService, private appc:AppComponent, private router:Router ) { }
 
   ngOnInit() {
-    this.http.getPosts().subscribe(data => {
-      console.log(data);
+      this.http.getPosts().subscribe(data => {
       this.posts = data;
       console.log(this.posts);
       this.appc.swic();
     }
     );
+    
   }
 
+  getTime(t:object):void{
+    
+    // let ti= t.monthValue+""+t.dayOfMonth+""+t.dayOfWeek+""+t.year+""+t.hour+""+t.minute;
+    console.log(t);
+    // @ts-ignore
+    let d = new Date(t);
+    console.log(d);
+
+  }
   
   navToProf(social_username: Event) {
     // use this.router.navigate(['/your-path']) to go to profile window tolowercase
