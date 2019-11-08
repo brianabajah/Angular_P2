@@ -11,13 +11,13 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
 
   constructor(private http: HttpClient, private router:Router) { }
-
+  profpic:string;
   curr={ "username":JSON.parse(localStorage.getItem("current")).username,
                 "description":JSON.parse(localStorage.getItem("current")).description,
                 "email":JSON.parse(localStorage.getItem("current")).email,
                 "profile":JSON.parse(localStorage.getItem("current")).profile,
                 "birthday":JSON.parse(localStorage.getItem("current")).birthday };
-  profpic:string;
+  profile:string=this.curr.profile;
   description:string=this.curr.description;
   email:string=this.curr.email;
   uname:string=this.curr.username;
@@ -30,13 +30,16 @@ export class ProfileComponent implements OnInit {
   }
 
   prof(){
-    this.profpic=localStorage.getItem("profpic");
-    this.description=localStorage.getItem("description");
-      if(this.profpic==null || this.profpic.length<1){
-      this.profpic="../../../assets/img/alt.png";
+    // this.profpic=this.profile;
+    let name=(this.router.url).substring(9);
+    this.profpic ="https://s3.us-east-2.amazonaws.com/mothra.co/Images/" + this.uname + ".jpeg";
+    // this.description=localStorage.getItem("description");
+    console.log(this.router.url);
+      if(this.router.url==="/main-feed(mleft:profile)"){
+      this.profpic="https://s3.us-east-2.amazonaws.com/mothra.co/Images/" + this.uname + ".jpeg";
       }
-      if(this.description==null || this.description.length<1){
-        this.description="Description";
+      else{
+        this.profpic="https://s3.us-east-2.amazonaws.com/mothra.co/Images/" + name + ".jpeg";
       }
   }
 
@@ -60,10 +63,10 @@ export class ProfileComponent implements OnInit {
 
   
   populateUser(){
-  let name=(this.router.url).substring(9);
-  this.http.get("http://localhost:8080/ProjectTwo/users/getUser.app?username="+name).subscribe(data => {
-        this.user = data;});
-    console.log(this.user);
+  // let name=(this.router.url).substring(9);
+  // this.http.post("http://localhost:8080/ProjectTwo/users/getUser.app?username="+name).subscribe(data => {
+  //       this.user = data;});
+  //   console.log(this.user);
   // this.user= JSON.parse(localStorage.getItem(this.router.url));
   // if(this.user!=null){
   // this.profpic=this.user.profpic;
@@ -82,7 +85,7 @@ export class ProfileComponent implements OnInit {
    userProf(){
      console.log("Clicked");
      if(this.router.url ==='/main-feed(mleft:profile)'){
-      let addrs= '/profile/'+localStorage.getItem("username");
+      let addrs= '/profile/'+this.uname;
       this.router.navigateByUrl(addrs);
      }
    }

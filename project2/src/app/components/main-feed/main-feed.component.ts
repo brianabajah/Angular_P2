@@ -30,10 +30,12 @@ export class MainFeedComponent implements OnInit {
   getTime(t:object):void{
     
     // let ti= t.monthValue+""+t.dayOfMonth+""+t.dayOfWeek+""+t.year+""+t.hour+""+t.minute;
-    console.log(t);
+    // console.log(t);
     // @ts-ignore
-    let d = new Date(t);
-    console.log(d);
+  //  let v = JSON.parse(JSON.stringify(t));
+  // for(let x of v){
+  //   console.log(x);
+  // }
 
   }
   
