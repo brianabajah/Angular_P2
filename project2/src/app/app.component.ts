@@ -34,6 +34,13 @@ export class AppComponent {
   where(){
     return (this.router.url === '/' || this.router.url === '/reg');
   }
+  search(){
+  // @ts-ignore
+  let j = document.getElementById("look").value;
+  console.log(j);
+    let addrs= '/profile/'+j;
+    this.router.navigateByUrl(addrs);
+  }
 }
 
 
