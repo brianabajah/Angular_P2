@@ -12,7 +12,7 @@ export class HttpService {
   getPosts(){
     return this.http.get("http://localhost:8080/ProjectTwo/users/getAllPosts.app");
   }
-  ////getting posts
+  ////getting posts main 
   
   commentServ(loginf:NgForm){
     return this.http.post("https://ebb8cab7-daa4-475c-917c-d5a38ae7e773.mock.pstmn.io/feed"

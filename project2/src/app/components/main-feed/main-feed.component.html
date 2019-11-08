@@ -1,6 +1,9 @@
 <div class="divider"></div>
 
 
+<button (click)="topFunction()" id="myBtn" title="Go to top">BACK TO TOP</button>
+
+
 <ul  class="posts" *ngIf="posts">
 <li *ngFor ="let post of posts">
 <br>
@@ -11,14 +14,14 @@
 <em class="material-icons icons">access_time</em>
 <h3 class="time">{{post.post_time}}</h3>
 <br>
-<div class="post" [routerLink]="['/main-feed']">
+<div class="post">
     {{post.post}}
 </div>
 <br>
-
-
-<em class="material-icons icons likes" (click)="like()">thumb_up</em><span>{{post.likes}}    </span>
+<form  #thelikebutton="ngForm" (ngSubmit)="like(thelikebutton)">
+<em class="material-icons icons likes"  name = "username" (click)="like()">thumb_up</em><span>{{post.likes}}    </span>
 <em class="material-icons icons likes">thumb_down</em>  
+</form>
 <br><br>
 <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -42,4 +45,24 @@
 </li>
 </ul>
 <br>
+<!--loooooooooooooooooooooook in between here if something goes wrong-->
+
+<div class="longDiv">
+    <p>
+      omg
+    </p>
+ </div>
+
+
+<!--loooooooooooooooooooooook in between here if something goes wrong-->
+
+
+
+
+
+
+
+
+
+
 <!-- <div class="divider"></div> -->
