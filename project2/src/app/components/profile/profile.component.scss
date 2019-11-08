@@ -49,4 +49,24 @@ label{
         background-color: #ddd;
         outline: none;
       }
-
+      .divider{
+        border-color: gray;
+        border-bottom-style: solid;
+    }
+    .posts{
+        list-style: none;
+        .post{
+           margin: auto;
+           padding: 5%;
+           width: 80%;
+           font-family: 'Patrick Hand', cursive;
+           border-color: gray;
+           border-style:groove;
+           border-radius: 20px;
+    
+        }
+        .likes{
+        cursor: pointer;
+        width: 10%;
+        }
+    }

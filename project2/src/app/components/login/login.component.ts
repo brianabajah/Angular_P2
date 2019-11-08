@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
 
 
     this.lognServ.submit(loginf).toPromise().then((resps)=>{
-      console.log(JSON.stringify(resps));
       localStorage.setItem("current",JSON.stringify(resps));
     });
     this.navigateToLogin();

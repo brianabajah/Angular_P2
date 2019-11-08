@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
+  posts:object=JSON.parse(localStorage.getItem("posts"));
   constructor(private http: HttpClient, private router:Router) { }
   profpic:string;
   curr={ "username":JSON.parse(localStorage.getItem("current")).username,
@@ -27,19 +28,18 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.prof();
+    this.populateUser();
+    // fxn change descp from curr to user when not in main
   }
 
   prof(){
-    // this.profpic=this.profile;
     let name=(this.router.url).substring(9);
-    this.profpic ="https://s3.us-east-2.amazonaws.com/mothra.co/Images/" + this.uname + ".jpeg";
-    // this.description=localStorage.getItem("description");
     console.log(this.router.url);
       if(this.router.url==="/main-feed(mleft:profile)"){
-      this.profpic="https://s3.us-east-2.amazonaws.com/mothra.co/Images/" + this.uname + ".jpeg";
+      this.profpic="https://s3.us-east-2.amazonaws.com/mothra.co/Profile/" + this.uname + ".jpeg";
       }
       else{
-        this.profpic="https://s3.us-east-2.amazonaws.com/mothra.co/Images/" + name + ".jpeg";
+        this.profpic="https://s3.us-east-2.amazonaws.com/mothra.co/Profile/" + name + ".jpeg";
       }
   }
 
@@ -61,22 +61,29 @@ export class ProfileComponent implements OnInit {
     .catch(e => console.log(e));
   }
 
-  
-  populateUser(){
-  // let name=(this.router.url).substring(9);
-  // this.http.post("http://localhost:8080/ProjectTwo/users/getUser.app?username="+name).subscribe(data => {
-  //       this.user = data;});
-  //   console.log(this.user);
-  // this.user= JSON.parse(localStorage.getItem(this.router.url));
-  // if(this.user!=null){
-  // this.profpic=this.user.profpic;
-  // this.description=this.user.description;
-  // this.email=this.user.email;
-  // this.uname=this.user.uname;
-  // this.bdate=this.user.bdate;
-  // }
- 
+  getnowUser():string{
+    return (this.router.url).substring(9);
   }
+  populateUser(){
+  let pName:string=(this.router.url).substring(9);
+  // this.http.get("http://localhost:8080/ProjectTwo/users/getUser.app/"+pName).toPromise()
+  // .then(r => {
+  //   console.log(r);
+  // });
+
+    this.http
+    .post("http://localhost:8080/ProjectTwo/users/getUser.app",
+      {jina:pName})
+    .toPromise()
+    .then( r => {
+      console.log(r);
+      localStorage.setItem("pPage",JSON.stringify(r))
+    })
+    .catch(e => console.log(e));
+  }
+  
+ 
+  
   onSide():boolean{
     // console.log("My name is "+ this.router.url +" looking for"+("/profile/"+ this.curr.username));
     return (this.router.url != '/main-feed(mleft:profile)' && this.router.url === "/profile/"+ this.curr.username );

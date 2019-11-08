@@ -20,23 +20,12 @@ export class MainFeedComponent implements OnInit {
   ngOnInit() {
       this.http.getPosts().subscribe(data => {
       this.posts = data;
+      localStorage.setItem("posts",JSON.stringify(this.posts));
       console.log(this.posts);
       this.appc.swic();
     }
     );
     
-  }
-
-  getTime(t:object):void{
-    
-    // let ti= t.monthValue+""+t.dayOfMonth+""+t.dayOfWeek+""+t.year+""+t.hour+""+t.minute;
-    // console.log(t);
-    // @ts-ignore
-  //  let v = JSON.parse(JSON.stringify(t));
-  // for(let x of v){
-  //   console.log(x);
-  // }
-
   }
   
   navToProf(social_username: Event) {
@@ -44,11 +33,8 @@ export class MainFeedComponent implements OnInit {
     let target = social_username.target || social_username.srcElement || social_username.currentTarget;
     // @ts-ignore
     var idAttr = target.innerHTML;
-
-
     let addrs= '/profile/'+idAttr;
     this.router.navigateByUrl(addrs);
-    console.log(idAttr);
   }
 
   comment(loginf: NgForm, ) {
