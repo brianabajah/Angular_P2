@@ -13,6 +13,10 @@ onError="this.src='../../../assets/img/alt.png';" alt="can you see me" >
                  <em class="material-icons icons">person</em> Update Information
                 </mat-expansion-panel-header>
                 <form #updt=ngForm (ngSubmit)="updat(updt)">
+                        <br>
+                        <label  for="description">Description:{{description}}</label>
+                        <input  id="description" type="text" placeholder="secret" name="description" ngModel>
+                        <br>
                         <label  for="email">Current Email:{{email}}</label><br>
                         <label for="email">Email</label>
                         <input  type="text" id="email" placeholder="Email" name="email" ngModel>

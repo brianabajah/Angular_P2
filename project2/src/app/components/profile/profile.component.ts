@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient} from "@angular/common/http";
+import { HttpClient ,HttpEvent, HttpRequest} from "@angular/common/http";
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -14,10 +14,12 @@ export class ProfileComponent implements OnInit {
   constructor(private http: HttpClient, private router:Router) { }
   profpic:string;
   curr={ "username":JSON.parse(localStorage.getItem("current")).username,
+                "password":JSON.parse(localStorage.getItem("current")).password,
                 "description":JSON.parse(localStorage.getItem("current")).description,
                 "email":JSON.parse(localStorage.getItem("current")).email,
                 "profile":JSON.parse(localStorage.getItem("current")).profile,
                 "birthday":JSON.parse(localStorage.getItem("current")).birthday };
+  password:string=this.curr.password;
   profile:string=this.curr.profile;
   description:string=this.curr.description;
   email:string=this.curr.email;
@@ -44,14 +46,23 @@ export class ProfileComponent implements OnInit {
   }
 
   updat(form: NgForm){
+    let usernam:string= form.value.username ;
+    let passwor:string =form.value.password;
+    let emai:string= form.value.email;
+    let profil:string= form.value.profile;
+    let birthda:string =form.value.birthday;
+    let descriptio:string = form.value.description;
+
+
+
     this.http
     .post("http://localhost:8080/ProjectTwo/users/updateuser.app", {
       ///change this to match the project name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      username: form.value.username,
-      password: form.value.password,
-      email: form.value.email,
-      profile: form.value.profile,
-      brithday: form.value.brithday
+      username: usernam.length<=0?this.uname:form.value.username,
+      password: passwor.length<=0?this.password:form.value.password,
+      email: emai.length<=0?this.email:form.value.email,
+      birthday: birthda==null?this.bdate:form.value.birthday,
+      description: descriptio.length<=0?this.description:form.value.description
   })
     .toPromise()
     .then((r:{userName:string;email:string;password:string;date:Date;}) => {
@@ -66,22 +77,14 @@ export class ProfileComponent implements OnInit {
   }
   populateUser(){
   let pName:string=(this.router.url).substring(9);
-  // this.http.get("http://localhost:8080/ProjectTwo/users/getUser.app/"+pName).toPromise()
-  // .then(r => {
-  //   console.log(r);
-  // });
-
-    this.http
-    .post("http://localhost:8080/ProjectTwo/users/getUser.app",
-      {jina:pName})
-    .toPromise()
-    .then( r => {
-      console.log(r);
-      localStorage.setItem("pPage",JSON.stringify(r))
-    })
-    .catch(e => console.log(e));
-  }
-  
+  const formdata: FormData = new FormData(); 
+  formdata.append('jina', pName);
+  const req = new HttpRequest('POST', 'http://localhost:8080/ProjectTwo/users/getUser.app', formdata, {
+    reportProgress: true,
+    responseType: 'json'
+  });
+  console.log(req);
+}
  
   
   onSide():boolean{
