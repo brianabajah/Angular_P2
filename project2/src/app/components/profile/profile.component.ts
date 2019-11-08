@@ -2,16 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient} from "@angular/common/http";
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
   constructor(private http: HttpClient, private router:Router) { }
-
   user:any={"profpic":"adress",
                "description":"description",
               "email":"email",
@@ -22,12 +19,9 @@ export class ProfileComponent implements OnInit {
   email:string;
   uname:string;
   bdate:any;
-
   ngOnInit() {
-
     this.prof();
   }
-
   prof(){
     this.profpic=localStorage.getItem("profpic");
     this.description=localStorage.getItem("description");
@@ -38,15 +32,15 @@ export class ProfileComponent implements OnInit {
         this.description="Description";
       }
   }
-
   updat(form: NgForm){
     this.http
-    .post("http://localhost:8080/ProjectTwo/users/updateuser.app", {
+    .post("http://localhost:8080/ProjectTwo/users/post.app", {
       ///change this to match the project name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       username: form.value.username,
       password: form.value.password,
       email: form.value.email,
       profile: form.value.profile,
+      /////this is for the profile picture
       brithday: form.value.brithday
   })
     .toPromise()
@@ -79,3 +73,4 @@ export class ProfileComponent implements OnInit {
    }
    
 }
+

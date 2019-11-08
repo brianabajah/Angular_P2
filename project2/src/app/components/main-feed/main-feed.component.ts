@@ -36,12 +36,10 @@ export class MainFeedComponent implements OnInit {
     let target = social_username.target || social_username.srcElement || social_username.currentTarget;
     // @ts-ignore
     var idAttr = target.innerHTML;
-
-
     let addrs= '/profile/'+idAttr;
     this.router.navigateByUrl(addrs);
-    console.log(idAttr);
   }
+
 
   comment(loginf: NgForm, ) {
     this.http.commentServ(loginf).toPromise().then((resps)=>{
